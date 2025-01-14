@@ -1,0 +1,63 @@
+Script started on 2025-01-14 13:41:44+00:00 [TERM="xterm-256color" TTY="/dev/pts/0" COLUMNS="96" LINES="11"]
+                    docker.build("flask-app")
+                }
+            }
+        }
+        stage('Run Container') {
+            steps {
+                sh 'docker-compose up -d'
+            }
+        }
+        stage('Test') {
+            steps {
+                script {
+                    sh 'curl -f http://localhost:5000 || exit 1'
+                }
+            }
+        }
+    }
+}
+[0;32m@NatVor [0m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                     docker.build("flask-app")
+bash: syntax error near unexpected token `"flask-app"'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                 }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$             }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$         }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$         stage('Run Container') {
+bash: syntax error near unexpected token `'Run Container''
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$             steps {
+bash: steps: command not found
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                 sh 'docker-compose up -d'
+sh: 0: Can't open docker-compose up -d
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$             }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$         }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$         stage('Test') {
+bash: syntax error near unexpected token `'Test''
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$             steps {
+bash: steps: command not found
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                 script {
+Script started, file is {
+                    sh 'curl -f http://localhost:5000 || exit 1'
+                }
+            }
+        }
+    }
+}
+[0;32m@NatVor [0m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                     sh 'curl -f http://localhost:5000 || exit 1'
+sh: 0: Can't open curl -f http://localhost:5000 || exit 1
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$                 }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$             }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$         }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$     }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$ }
+bash: syntax error near unexpected token `}'
+[0;32m@NatVor [1;31m➜ [1;34m/workspaces/ci-cd-test-task-NatVor [0;36m([1;31mmain[0;36m) [0m$ тфтщ О[K[K[K[K[K[Knano Jenkinsfile
+[?2004h[?1049h[22;0;0t[1;11r(B[m[4l[?7h[39;49m[?1h=[?1h=[?25l[39;49m(B[m[H[2J[9;43H(B[0;7m[ New File ](B[m[H(B[0;7m  GNU nano 4.8                              Jenkinsfile                                        
