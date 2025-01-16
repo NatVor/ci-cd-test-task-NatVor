@@ -1,7 +1,7 @@
 groups:
   - name: container-memory-alerts
     rules:
-    - alert: HighMemoryUsage  # The name of the alert that triggers when memory usage is high
+    - alert: HighMemoryUsage
       expr: (container_memory_usage_bytes{instance="localhost:5001", job="docker"} / container_spec_memory_limit_bytes{instance="localhost:5001", job="docker"}) > 0.8
       for: 1m  # Trigger the alert if the condition persists for more than 1 minute
       labels:
