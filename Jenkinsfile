@@ -2,7 +2,10 @@ pipeline {
     agent any
 
     environment {
-        DOCKER_IMAGE = 'flask-app'
+        DOCKER_IMAGE = 'test-image'
+        DOCKER_IMAGE_VERSION = 'v1.0'
+        CONTAINER_NAME = 'app-container'
+        VOLUME_NAME = 'app-data'
     }
 
     stages {
@@ -15,7 +18,7 @@ pipeline {
         stage('Build Docker Image') {
             steps {
                 script {
-                    docker.build(DOCKER_IMAGE)
+                    docker.build("${DOCKER_IMAGE}:${DOCKER_IMAGE_VERSION}")
                 }
             }
         }
@@ -23,7 +26,8 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
-                    docker.image(DOCKER_IMAGE).run('-d -p 5000:5000')
+                    sh "docker rm -f ${CONTAINER_NAME} || true"
+                    docker.image("${DOCKER_IMAGE}:${DOCKER_IMAGE_VERSION}").run("-d --name ${CONTAINER_NAME} -p 5000:5000 -v ${VOLUME_NAME}:/app/data")
                 }
             }
         }
