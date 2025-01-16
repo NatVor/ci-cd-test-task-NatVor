@@ -1,11 +1,6 @@
-# Docker-Jenkins-Prometheus-Grafana
+# Docker-Jenkins-Prometheus-Grafana (Test Task)
 
 Solution for deploying a Python application in a Docker container, configuring ci/cd with Jenkins, and monitoring with Prometheus, Grafana, cAdvisor, NodeExporter
-
-
-
-
-# DevOps Engineer Test Task
 
 ## Objective
 Create a simple infrastructure that includes:
