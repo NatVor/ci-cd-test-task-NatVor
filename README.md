@@ -82,3 +82,35 @@ sudo ufw allow 5000
 
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 
+Щоб цей Jenkins pipeline працював належним чином, вам потрібно встановити кілька плагінів для підтримки Docker і Git. Ось перелік плагінів, які необхідно встановити:
+
+1. Git Plugin:
+Для роботи з Git, для клонування репозиторіїв у вашому pipeline.
+
+Плагін: Git Plugin
+Опис: Дозволяє Jenkins клонувати репозиторії з Git.
+2. Docker Pipeline Plugin:
+Для виконання команд Docker, таких як docker.build, docker.image, тощо.
+
+Плагін: Docker Pipeline
+Опис: Плагін для інтеграції Jenkins з Docker, дозволяє запускати Docker-контейнери, будувати образи та інші операції з Docker.
+3. Docker Plugin:
+Плагін для інтеграції Jenkins із Docker і для створення Docker контейнерів.
+
+Плагін: Docker Plugin
+Опис: Плагін для інтеграції Jenkins з Docker. Дає змогу управляти Docker контейнерами з Jenkins.
+4. Pipeline: Declarative:
+Цей плагін дозволяє використовувати декларативні синтаксиси для написання pipeline, як в вашому прикладі.
+
+Плагін: Pipeline: Declarative
+Опис: Плагін для підтримки декларативних pipeline у Jenkins.
+5. Pipeline: Groovy:
+Для підтримки скриптів Groovy, які можуть використовуватися в pipeline.
+
+Плагін: Pipeline: Groovy
+Опис: Дозволяє використовувати Groovy скрипти в pipeline для написання коду, що виконується на етапах pipeline.
+6. Blue Ocean Plugin (необов'язково):
+Для зручнішого перегляду pipeline у графічному вигляді.
+
+Плагін: Blue Ocean
+Опис: Зручний інтерфейс для перегляду та керування pipeline.
