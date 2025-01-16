@@ -61,3 +61,7 @@ bash
 Копіювати
 Редагувати
 sudo systemctl status jenkins
+
+
+sudo ufw allow 8080
+sudo ufw allow 5000
