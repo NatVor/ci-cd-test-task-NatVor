@@ -15,7 +15,6 @@ Create a simple infrastructure that includes:
 ```
 git clone git@github.com:NatVor/ci-cd-test-task-NatVor.git
 cd ci-cd-test-task-NatVor
-docker-compose up -d
 ```
 
 ## Prerequisites:
