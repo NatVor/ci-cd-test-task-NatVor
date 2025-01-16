@@ -8,31 +8,6 @@ Create a simple infrastructure that includes:
 2. System monitoring.
 3. Documentation for the work performed.
 
-## Task Description
-
-### Steps:
-1. **CI/CD Pipeline Setup:**
-    - Using **Jenkins** and **DSL scripts**, create a pipeline for a containerized Python application (a simple HTTP server or a web application with a single API endpoint).
-    - Configure the pipeline to perform the following stages:
-      - Build the Docker image.
-      - Deploy the container on a local machine or virtual machine (possibly using Docker Compose).
-      - Automatically test the application (e.g., check the response to an HTTP request).
-    - **Expected Result**: A configured and documented pipeline that can be triggered to build and deploy the application.
-
-2. **Monitoring Setup:**
-    - Set up a monitoring system using **Grafana** and **Prometheus** to track the health of the server and the containerized application.
-    - Configure one or two basic alerts (e.g., for high CPU load or container memory usage).
-    - **Expected Result**: A visualization of the monitoring dashboard and a screenshot with sample data or graphs.
-
-3. **Documentation:**
-    - Describe the process of setting up and deploying the CI/CD pipeline.
-    - Briefly explain the setup of monitoring and alert configuration.
-
-4. **Optional Tasks (Not Mandatory):**
-    - Optimize the pipeline for faster builds.
-    - Add automation scripts for simple tasks (e.g., creating backups or restarting the container via command).
-
----
 
 ## CI/CD Pipeline Setup
 
