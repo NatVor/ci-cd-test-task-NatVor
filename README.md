@@ -2,6 +2,91 @@
 
 Solution for deploying a Python application in a Docker container, configuring ci/cd with Jenkins, and monitoring with Prometheus, Grafana, cAdvisor, NodeExporter
 
+
+
+
+# DevOps Engineer Test Task
+
+## Objective
+Create a simple infrastructure that includes:
+1. CI/CD pipeline for a containerized application.
+2. System monitoring.
+3. Documentation for the work performed.
+
+## Task Description
+
+### Steps:
+1. **CI/CD Pipeline Setup:**
+    - Using **Jenkins** and **DSL scripts**, create a pipeline for a containerized Python application (a simple HTTP server or a web application with a single API endpoint).
+    - Configure the pipeline to perform the following stages:
+      - Build the Docker image.
+      - Deploy the container on a local machine or virtual machine (possibly using Docker Compose).
+      - Automatically test the application (e.g., check the response to an HTTP request).
+    - **Expected Result**: A configured and documented pipeline that can be triggered to build and deploy the application.
+
+2. **Monitoring Setup:**
+    - Set up a monitoring system using **Grafana** and **Prometheus** to track the health of the server and the containerized application.
+    - Configure one or two basic alerts (e.g., for high CPU load or container memory usage).
+    - **Expected Result**: A visualization of the monitoring dashboard and a screenshot with sample data or graphs.
+
+3. **Documentation:**
+    - Describe the process of setting up and deploying the CI/CD pipeline.
+    - Briefly explain the setup of monitoring and alert configuration.
+
+4. **Optional Tasks (Not Mandatory):**
+    - Optimize the pipeline for faster builds.
+    - Add automation scripts for simple tasks (e.g., creating backups or restarting the container via command).
+
+---
+
+## CI/CD Pipeline Setup
+
+### Overview:
+The CI/CD pipeline has been created using **Jenkins** to automate the build, deployment, and testing of a simple Python application in a Docker container. The pipeline stages include:
+- **Building Docker Image**: A Docker image is built from the Python application.
+- **Deployment**: The Docker container is deployed on a local machine or virtual machine, potentially using Docker Compose for orchestration.
+- **Automated Tests**: A simple test verifies that the HTTP server responds correctly.
+
+### Jenkins Pipeline:
+The Jenkins pipeline uses a **Jenkinsfile** that defines the stages and steps required for the build and deployment of the application. It performs:
+1. **Build**: Builds the Docker image using the Dockerfile.
+2. **Test**: Runs basic HTTP requests against the container to verify its operation.
+3. **Deploy**: Deploys the Docker container to a machine, ensuring that it is running the application.
+
+---
+
+## Monitoring Setup
+
+### Overview:
+The monitoring system is set up using **Prometheus** and **Grafana** to track the health of the server and the application container.
+
+- **Prometheus** collects and stores metrics on the server's health (e.g., CPU, memory usage) and the container’s performance.
+- **Grafana** is used to visualize these metrics and display them on a dashboard.
+
+### Steps:
+1. **Prometheus Installation**: Prometheus is installed and configured to scrape metrics from the system and Docker containers.
+2. **Grafana Installation**: Grafana is installed to visualize the metrics collected by Prometheus.
+3. **Alert Configuration**: Alerts are set up in Prometheus for:
+   - High CPU load
+   - High memory usage by the application container
+
+### Expected Result:
+A Grafana dashboard displays the status of the server and container. Prometheus will send alerts for any high resource usage.
+
+---
+
+## Installation and Setup
+
+### Prerequisites:
+- Ubuntu or Debian-based system
+- Access to a terminal with `sudo` privileges
+
+### 1. **System Update**:
+Update the system with the following commands:
+```bash
+sudo apt-get update && sudo apt-get upgrade -y
+
+
 sudo usermod -aG docker $USER
 
 
