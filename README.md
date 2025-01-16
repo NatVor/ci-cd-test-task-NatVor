@@ -8,53 +8,30 @@ Create a simple infrastructure that includes:
 2. System monitoring.
 3. Documentation for the work performed.
 
+## Install
 
-## CI/CD Pipeline Setup
+### Clone this repository on your Docker host, cd into test directory and run compose up:
 
-### Overview:
-The CI/CD pipeline has been created using **Jenkins** to automate the build, deployment, and testing of a simple Python application in a Docker container. The pipeline stages include:
-- **Building Docker Image**: A Docker image is built from the Python application.
-- **Deployment**: The Docker container is deployed on a local machine or virtual machine, potentially using Docker Compose for orchestration.
-- **Automated Tests**: A simple test verifies that the HTTP server responds correctly.
+```
+git clone git@github.com:NatVor/ci-cd-test-task-NatVor.git
+cd ci-cd-test-task-NatVor
+docker-compose up -d
+```
 
-### Jenkins Pipeline:
-The Jenkins pipeline uses a **Jenkinsfile** that defines the stages and steps required for the build and deployment of the application. It performs:
-1. **Build**: Builds the Docker image using the Dockerfile.
-2. **Test**: Runs basic HTTP requests against the container to verify its operation.
-3. **Deploy**: Deploys the Docker container to a machine, ensuring that it is running the application.
+## Prerequisites:
 
----
+* Docker Engine >= 1.13
+* Docker Compose >= 1.11
+* Jenkins `http://<host-ip>:8080`
+* Prometheus (metrics database) `http://<host-ip>:9090`
+* Grafana (visualize metrics) `http://<host-ip>:3000`
+* Node Exporter (host metrics collector)
 
-## Monitoring Setup
+## Containers:
 
-### Overview:
-The monitoring system is set up using **Prometheus** and **Grafana** to track the health of the server and the application container.
+* AlertManager (alerts management) `http://<host-ip>:9093`
+* cAdvisor (containers metrics collector)
 
-- **Prometheus** collects and stores metrics on the server's health (e.g., CPU, memory usage) and the container’s performance.
-- **Grafana** is used to visualize these metrics and display them on a dashboard.
-
-### Steps:
-1. **Prometheus Installation**: Prometheus is installed and configured to scrape metrics from the system and Docker containers.
-2. **Grafana Installation**: Grafana is installed to visualize the metrics collected by Prometheus.
-3. **Alert Configuration**: Alerts are set up in Prometheus for:
-   - High CPU load
-   - High memory usage by the application container
-
-### Expected Result:
-A Grafana dashboard displays the status of the server and container. Prometheus will send alerts for any high resource usage.
-
----
-
-## Installation and Setup
-
-### Prerequisites:
-- Ubuntu or Debian-based system
-- Access to a terminal with `sudo` privileges
-
-### 1. **System Update**:
-Update the system with the following commands:
-```bash
-sudo apt-get update && sudo apt-get upgrade -y
 
 
 sudo usermod -aG docker $USER
