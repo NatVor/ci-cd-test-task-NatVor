@@ -8,6 +8,10 @@ pipeline {
         VOLUME_NAME = 'app-data'
     }
 
+    triggers {
+        githubPush()
+    }
+
     stages {
         stage('Checkout') {
             steps {
