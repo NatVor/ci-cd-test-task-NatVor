@@ -30,6 +30,20 @@ bash
 Копіювати
 Редагувати
 sudo sh -c 'echo deb http://pkg.jenkins.io/debian-stable/ binary/ > /etc/apt/sources.list.d/jenkins.list'
+
+
+sudo apt update
+sudo apt install openjdk-17-jdk -y
+Налаштування Java 17 як за замовчуванням
+Після встановлення Java 17, потрібно налаштувати її як основну версію для системи:
+
+bash
+Копіювати
+Редагувати
+sudo update-alternatives --config java
+
+
+
 Встановлення Jenkins:
 
 Тепер оновіть пакети і встановіть Jenkins:
