@@ -39,7 +39,7 @@ docker-compose up -d
 ### Add a Jenkins user to the docker group:
 * sudo usermod -aG docker $USER (This command allows the current user to execute Docker commands without having to specify sudo).
 * sudo usermod -aG docker jenkins (This command gives the Jenkins user access to Docker, allowing Jenkins to work with Docker containers when performing pipelining or other tasks).
-*sudo chmod 666 /var/run/docker.sock 
+* sudo chmod 666 /var/run/docker.sock 
 
 For this Jenkins pipeline to work properly, you need to install several plugins to support Docker and Git. Here is the list of plugins you need to install:
 
