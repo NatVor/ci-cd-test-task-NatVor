@@ -1,4 +1,6 @@
-# ci-cd-test-task-NatVor
+# Docker-Jenkins-Prometheus-Grafana
+
+Solution for deploying a Python application in a Docker container, configuring ci/cd with Jenkins, and monitoring with Prometheus, Grafana, cAdvisor, NodeExporter
 
 sudo usermod -aG docker $USER
 
