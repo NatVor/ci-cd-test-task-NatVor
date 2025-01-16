@@ -79,3 +79,6 @@ sudo systemctl status jenkins
 
 sudo ufw allow 8080
 sudo ufw allow 5000
+
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+
