@@ -26,6 +26,7 @@ pipeline {
         stage('Run Container') {
             steps {
                 script {
+                    sh "docker stop ${CONTAINER_NAME} || true"
                     sh "docker rm -f ${CONTAINER_NAME} || true"
                     docker.image("${DOCKER_IMAGE}:${DOCKER_IMAGE_VERSION}").run("-d --name ${CONTAINER_NAME} -p 5000:5000 -v ${VOLUME_NAME}:/app/data")
                 }
