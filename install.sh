@@ -41,9 +41,8 @@ sudo usermod -aG docker jenkins
 
 # Install Docker Compose
 echo "Installing Docker Compose..."
-# Download Docker Compose binary
-sudo curl -L "https://github.com/docker/compose/releases/download/2.17.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-# Make Docker Compose executable
+sudo apt-get update
+sudo curl -L "https://github.com/docker/compose/releases/latest/download/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 sudo chmod +x /usr/local/bin/docker-compose
 
 # Install Prometheus
